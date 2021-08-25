@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import Header from './components/Header';
-import Form from './components/Form';
-import TodosList from './components/TodoList';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import TodosList from "./components/TodoList";
+import { GrPowerReset } from "react-icons/gr";
+import "./App.css";
 
 const App = () => {
   const initialState = JSON.parse(localStorage.getItem("todos")) || [];
@@ -11,9 +12,13 @@ const App = () => {
   const [editTodo, setEditTodo] = useState(null);
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos))
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+  const resetHandler = () => {
+    setTodos([]);
+  };
+  console.log(todos);
   return (
     <div className="container">
       <div className="app-wrapper">
@@ -38,8 +43,11 @@ const App = () => {
           />
         </div>
       </div>
+      <button onClick={resetHandler} id="btn">
+        <GrPowerReset />
+      </button>
     </div>
   );
-}
+};
 
 export default App;
