@@ -18,7 +18,7 @@ const App = () => {
   const resetHandler = () => {
     setTodos([]);
   };
-  console.log(todos);
+  
   return (
     <div className="container">
       <div className="app-wrapper">

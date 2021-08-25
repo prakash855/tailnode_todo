@@ -39,6 +39,9 @@
   margin-bottom: 10px;
 }
 .header h1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   color: #fff;
   text-align: center;
   margin: 30px 0;
