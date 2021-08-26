@@ -1,11 +1,12 @@
 import React from "react";
-import { BsCheckAll, BsTrash } from "react-icons/bs";
+import { BsCheckAll, BsTrash, BsCheck } from "react-icons/bs";
 import { FaUserEdit } from "react-icons/fa";
 
 const TodosList = ({ todos, setTodos, setEditTodo }) => {
   const handleComplete = (todo) =>
     setTodos(
       todos.map((item) => {
+        console.log(item);
         if (item.id === todo.id) {
           return { ...item, completed: !item.completed };
         }
@@ -18,6 +19,7 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
     const findTodo = todos.find((todo) => todo.id === id);
     setEditTodo(findTodo);
   };
+
   return (
     <div>
       {todos.map((todo) => (
@@ -25,7 +27,7 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
           <input
             type="text"
             value={todo.title}
-            className={"list " + (todo.completed ? "complete" : "")}
+            className="list"
             onChange={(event) => event.preventDefault()}
           />
           <div>
@@ -33,7 +35,11 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
               className="button-complete task-button"
               onClick={() => handleComplete(todo)}
             >
-              <BsCheckAll />
+              {!todo.completed ? (
+                <BsCheck color="rgb(145, 145, 145)" />
+              ) : (
+                <BsCheckAll color="green" />
+              )}
             </button>
             <button
               className="button-edit task-button"
