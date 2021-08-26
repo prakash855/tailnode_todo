@@ -4,10 +4,10 @@
   font-family: "Rokkitt", serif;
 }
 #btn {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
-  padding: 15px;
+  padding: 10px;
   font-size: 2rem;
   background: transparent;
   color: white;
@@ -19,6 +19,10 @@
   width: 70px;
   cursor: pointer;
   border-radius: 10px;
+  box-shadow: 3px 3px 10px #000;
+}
+#btn:hover{
+  background: rgb(221, 217, 201);
 }
 .container {
   /* background: linear-gradient(to right bottom, #e1b302, #c09666); */
