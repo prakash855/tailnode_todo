@@ -21,7 +21,7 @@
   border-radius: 10px;
 }
 .container {
-  background: linear-gradient(to right bottom, #e1b302, #c09666);
+  /* background: linear-gradient(to right bottom, #e1b302, #c09666); */
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -29,7 +29,7 @@
   align-items: center;
 }
 .app-wrapper {
-  background-color: #12343b;
+  background-color: black;
   min-width: 450px;
   min-height: 650px;
   padding: 30px;
@@ -112,7 +112,7 @@
 
 .list {
   width: 220px;
-  background-color: #12343b;
+  background-color: black;
   border: none;
   color: #ccc;
   font-size: 25px;
@@ -124,18 +124,19 @@ input:focus,
 button:focus {
   outline: none;
 }
-#footer{
-  position: absolute;
-  bottom: 0;
+#footer {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
   display: flex;
   align-items: center;
   font-size: 1.5rem;
 }
-#profile{
+#profile {
   text-decoration: none;
 }
-@media(max-width:768px){
-  #footer{
+@media (max-width: 768px) {
+  #footer {
     display: none;
   }
 }
